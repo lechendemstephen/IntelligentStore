@@ -48,4 +48,3 @@ def login(request):
     return render(request, 'pages/authentication/login.html')
 
 
-
