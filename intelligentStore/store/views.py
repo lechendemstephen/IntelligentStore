@@ -21,11 +21,6 @@ def orders(request):
     return render(request, 'pages/public/orders.html')
 
 
-# account preview
-def account(request): 
-
-    return render(request, 'pages/account/account_preview.html')
-
 # cart preview
 def cart(request): 
 
@@ -37,14 +32,14 @@ def cart(request):
 
 
 
-def signup(request): 
+# def signup(request): 
 
-    return render(request, 'pages/authentication/signup.html')
+#     return render(request, 'account/signup.html')
 
 
 
-def login(request): 
+# def login(request): 
 
-    return render(request, 'pages/authentication/login.html')
+#     return render(request, 'account/login.html')
 
 
