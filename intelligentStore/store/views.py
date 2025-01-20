@@ -27,19 +27,9 @@ def cart(request):
     return render(request, 'pages/public/cart.html')
 
 
+# account dashboard 
 
-# authentication 
+def account_settings(request): 
 
-
-
-# def signup(request): 
-
-#     return render(request, 'account/signup.html')
-
-
-
-# def login(request): 
-
-#     return render(request, 'account/login.html')
-
+    return render(request, 'account/account_email.html')
 
