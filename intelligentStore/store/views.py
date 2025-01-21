@@ -26,6 +26,11 @@ def cart(request):
 
     return render(request, 'pages/public/cart.html')
 
+#checkout
+def checkout(request): 
+
+    return render(request, 'pages/public/checkout.html')
+
 
 # account dashboard 
 

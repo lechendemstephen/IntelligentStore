@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p4g-f2o-k49%$nchdnv-zdfpr^#6aq%g0xkq(^^fqhlx)%z=nz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -164,8 +164,18 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "optional"  # Choose 'mandatory', 'optional', or 'none'
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"  # 'username', 'email', or 'username_email'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Replace with actual email backend in production
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Example for Gmail
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'slechendem2010@gmail.com'  # Replace with your email
+EMAIL_HOST_PASSWORD = 'qbdm pwdn fepx gkjg'  # Replace with your email password
+DEFAULT_FROM_EMAIL = 'IntelligentStore <info@intelligentstore.com>'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'intelligentstore.com '
+
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = ''  # Replace with your custom URL
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/account_login/'  # Replace with your custom URL
 
 
 

@@ -14,7 +14,18 @@
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                     Create an account
                 </h1>
+
+                {% if form.errors %}
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                            <li>{{ field }}: {{ errors|join:", " }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                
+                
                 <form class="space-y-4 md:space-y-6" method="post" action="{% url 'account_signup' %}">
+
                     {% csrf_token %}
 
                     <div>
@@ -40,13 +51,6 @@
                     </p>
                    
                 </form>
-                {% if form.errors %}
-                    <ul>
-                        {% for field, errors in form.errors.items %}
-                            <li>{{ field }}: {{ errors|join:", " }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
                 
             </div>
         </div>
