@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_extensions',
     # Add providers if needed (e.g., Google, Facebook)
     'allauth.socialaccount.providers.google',
 ]

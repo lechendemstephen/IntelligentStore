@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -38,3 +38,8 @@ def account_settings(request):
 
     return render(request, 'account/account_email.html')
 
+#account overview 
+@login_required(login_url='account_login')
+def account_overview(request): 
+
+    return render(request, 'pages/public/account_overview.html')

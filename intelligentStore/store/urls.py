@@ -9,6 +9,7 @@ urlpatterns = [
 
 
     # user settings 
-    path('accounts/email/', views.account_settings, name='account_email')
+    path('accounts/email/', views.account_settings, name='account_email'),
+    path('account_overview/', views.account_overview, name='account_overview')
 
 ]
