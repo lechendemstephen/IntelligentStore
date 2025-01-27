@@ -18,7 +18,7 @@ class Category(models.Model):
 class Product(models.Model): 
     name = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='media/products',)
+    image = models.ImageField(upload_to='products/',)
     price = models.BigIntegerField()
     description = models.TextField(max_length=3000)
     slug = models.SlugField() 
