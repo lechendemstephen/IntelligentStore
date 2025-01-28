@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store',
+    'Cart',
     # Other apps
     'django.contrib.sites',
     'allauth',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'django_extensions',
     # Add providers if needed (e.g., Google, Facebook)
     'allauth.socialaccount.providers.google',
+    
 ]
 
 SITE_ID = 1
