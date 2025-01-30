@@ -21,16 +21,22 @@ def add_to_cart(request, product_id):
 @login_required
 def cart_item(request):
     try: 
-    # cart 
+        # cart 
         cart = Cart.objects.get(user=request.user) 
         # getting all cart items 
         items = CartItem.objects.filter(cart=cart)
-        print(items)
+        # Debug statement to log items
+        print(f"Cart items for user {request.user.username}: {items}")
     except Cart.DoesNotExist: 
         items = [] 
+        # Debug statement to log empty cart
+        print(f"No cart found for user {request.user.username}")
 
     context = {
         'items': items 
     }
+
+    # Debug statement to log context data
+    print(f"Context data: {context}")
 
     return render(request, 'pages/public/cart.html', context)

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'store',
     'Cart',
+    'comment', 
     # Other apps
     'django.contrib.sites',
     'allauth',
