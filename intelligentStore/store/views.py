@@ -48,10 +48,7 @@ def single_product(request, product_name):
 
     return render(request, 'pages/public/single_product.html', context )
 
-# cart preview
-def cart(request): 
 
-    return render(request, 'pages/public/cart.html')
 
 #checkout
 def checkout(request): 

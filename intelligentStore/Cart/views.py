@@ -20,20 +20,32 @@ def add_to_cart(request, product_id):
 # show all cart items 
 @login_required
 def cart_item(request):
-    try: 
-        # cart 
-        cart = Cart.objects.get(user=request.user) 
+    
+     # cart 
+    cart = Cart.objects.get(user=request.user)
+    if cart: 
+        
         # getting all cart items 
         items = CartItem.objects.filter(cart=cart)
         # Debug statement to log items
-        print(f"Cart items for user {request.user.username}: {items}")
-    except Cart.DoesNotExist: 
+        total = 0 
+        for item in items: 
+            total += item.total
+        # getting the total price of the items in the cart 
+        tax = total * 0.08 
+        # calculating the grand total 
+        grand_total = total + tax
+        
+    else: 
         items = [] 
-        # Debug statement to log empty cart
-        print(f"No cart found for user {request.user.username}")
+            # Debug statement to log empty cart
+        
 
     context = {
-        'items': items 
+        'items': items, 
+        'total': total,
+        'tax': tax,
+        'grand_total': grand_total
     }
 
     # Debug statement to log context data
