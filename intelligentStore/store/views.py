@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Product
+from .models import Product, Category
 from comment.models import Comments  # import the comment model
 # Create your views here.
 
@@ -21,10 +21,12 @@ def index(request):
 # shop preview 
 def shop(request): 
     all_products = Product.objects.all()
+    all_categories = Category.objects.all() # get all categories
 
 
     context = {
-        'products': all_products
+        'products': all_products, 
+        'categories': all_categories
     }
     return render(request, 'pages/public/shop.html', context)
 
